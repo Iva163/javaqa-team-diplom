@@ -15,6 +15,7 @@ public class GameStore {
      */
     private Map<String, Integer> playedTime = new HashMap<>();
 
+
     /**
      * Создание объекта игры с заданными заголовком и жанром
      * Каждый объект игры помнит объект каталога, которому она принадлежит
@@ -30,14 +31,13 @@ public class GameStore {
      * если игра есть и false иначе
      */
     public boolean containsGame(Game game) {
-        for (int i = 1; i < games.size(); i++) {
+        for (int i = 1; i < games.size(); i++) {   // i = 0
             if (games.get(i - 1).equals(game)) {
                 return true;
             }
         }
         return false;
     }
-
     /**
      * Регистрирует количество времени, которое проиграл игрок
      * за игрой этого каталога. Игрок задаётся по имени. Время должно
