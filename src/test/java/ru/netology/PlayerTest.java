@@ -108,4 +108,15 @@ public class PlayerTest {
 
     }
 
+    @Test
+    public void shouldGetName() {
+        Player player = new Player("Petya");
+        String expected = "Petya";
+        String actual = player.getName();
+        assertEquals(expected, actual);
+
+    }
+
+
+
 }
