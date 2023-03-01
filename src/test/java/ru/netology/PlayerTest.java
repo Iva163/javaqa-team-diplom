@@ -92,17 +92,7 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
-    // Тест на метод installGame
-    @Test
-    public void shouldInstallGameIfOneGame() {
-        GameStore store = new GameStore();
-        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
 
-        Player player = new Player("Petya");
-        player.installGame(game);
-
-
-    }
 
     // Тест, если игра не установлена, должно быть исключение
     @Test
