@@ -21,7 +21,7 @@ public class GameStoreTest {
     public void MustAddApPlayingTime() {
 
         GameStore store = new GameStore();
-        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+
         store.addPlayTime("Vasiliy", 23);
         store.addPlayTime("Dima", 60);
         store.addPlayTime("Anna", 2);
@@ -34,7 +34,7 @@ public class GameStoreTest {
     @Test
     public void ShouldFindPlayerWithLongestPlayedTime() {
         GameStore store = new GameStore();
-        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+
         store.addPlayTime("Vasiliy", 23);
         store.addPlayTime("Dima", 60);
         store.addPlayTime("Anna", 2);
@@ -48,13 +48,15 @@ public class GameStoreTest {
     @Test
     public void MustRegisterPlayingTime() {
         GameStore store = new GameStore();
-        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+
         store.addPlayTime("Vasiliy", 23);
         store.addPlayTime("Vasiliy", 60);
         store.addPlayTime("Vasiliy", 2);
 
 
-        assertEquals(85, 85);
+        int expected = 85;
+        int actual = store.getSumPlayedTime();
+        assertEquals(expected, actual);
 
 
     }
